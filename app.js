@@ -64,7 +64,7 @@ addEventListener("load", (e) => {
   });
 });
 
-// TEXT ANIMATION
+// EYEBALL ANIMATION
 
 const cursor = {
   x: 0,
@@ -77,15 +77,17 @@ const eye = document.querySelector(".eye");
 const eyeball = document.querySelector(".eye .ball");
 const eyeballRect = eyeball.getBoundingClientRect();
 const eyeRect = eye.getBoundingClientRect();
-console.log(eyeRect.height);
+const limit = eyeballRect.top - eyeRect.top
+console.log(limit);
 
 addEventListener("mousemove", (e) => {
-  cursor.x = (e.clientX / boxRect.width - 0.5) * 120;
-  cursor.y = (e.clientY / boxRect.height - 0.5) * 120;
-  if (cursor.y > 60) cursor.y = 60;
-  if (cursor.y <= -60) cursor.y = -60;
-  if (cursor.x > 60) cursor.x = 60;
-  if (cursor.x <= -60) cursor.x = -60;
+  cursor.x = (e.clientX / boxRect.width - 0.5) * limit*2;
+  cursor.y = (e.clientY / boxRect.height - 0.5) * limit*2;
+  // VERTICAL / HORIONTAL LIMIT
+  if (cursor.y > limit) cursor.y = limit;
+  if (cursor.y <= -(limit)) cursor.y = -(limit);
+  if (cursor.x > limit) cursor.x = limit;
+  if (cursor.x <= -(limit)) cursor.x = -(limit);
 
   // LEFT BOTTOM LIMIT
   if (cursor.y >= 0 && cursor.y <= 40 && cursor.x <= -50) cursor.x = -50;
@@ -107,8 +109,8 @@ addEventListener("mousemove", (e) => {
   if (cursor.y <= -40 && cursor.y >= -50 && cursor.x >= 35) cursor.x = 35;
   if (cursor.y <= -50 && cursor.y >= -60 && cursor.x >= 20) cursor.x = 20;
 
-  console.log(cursor.y, "y");
-  console.log(cursor.x, "x");
+  // console.log(cursor.y, "y");
+  // console.log(cursor.x, "x");
 
   anime({
     targets: ".eye .ball",
@@ -127,8 +129,7 @@ brow.addEventListener("mouseover", (e) => {
 brow.addEventListener("mouseout", (e) => {
   anime({
     targets: [".eye", "eye. ball"],
-    scaleY: { value: 1, duration: 500, delay: 1000 },
+    scaleY: { value: 1, duration: 1000, delay: 1000 },
   });
 });
 
-// Image
