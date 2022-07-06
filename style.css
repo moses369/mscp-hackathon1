@@ -1,42 +1,137 @@
-*{
-   font-family: Arial, Helvetica, sans-serif;
-   box-sizing: border-box;
-   font-size: 1.25rem;
-   color: aliceblue;
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+  color: #f0f8ff;
 }
 
-body{
-   background:#414a4c
-   ;
-}
-.container {
-  margin: auto;
-  padding: 2rem;
-  max-width: 30vw;
-}
-.container form {
+body {
+  background: #414a4c;
   display: flex;
   flex-direction: column;
+}
+.container.main {
+  width: min(100vw, 100%);
+  
+}
+.header {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 1rem;
-  border-radius: 1rem;
-  background: rgba(255,255,255,.4);
+  padding-top: 0;
+  width: 100%;
 }
 
-.container form input{
-   margin: .25rem 0 1.25rem 0;
-   padding: .5rem 0 .5rem .5rem;
-   border-radius: .75rem;
+
+.container.content {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  grid-area: main;
+}
+
+.btn {
+  width: fit-content;
+  color: #414a4c;
+  padding: 0.25rem;
+  align-self: center;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 0.75rem;
+}
+
+/* SUBMIT BTN CSS */
+#submit-box {
+  grid-column: 4/5;
+  align-self: center;
+  position: relative;
+  margin: 1rem;
+  width: 7rem;
+  height: 3rem;
+  justify-content: center;
+  background: white;
+}
+
+
+#submit .text {
+  color: #414a4c;
 }
 
 #submit{
-   width: fit-content;
-   padding: .75rem;
-   align-self: center;
-   margin: 0;
-   color: #414a4c;
-   cursor: pointer;
+   height: fit-content;
 }
 
+#check img,
+.color,#submit {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+#check img {
+  width: 0
+}
+.color {
+  width: 0;
+  background: #66ff66;
+}
+/* TITLE CSS */
+.title {
+  position: relative;
+  grid-column: 1/4;
+  width: 100%;
+}
+.title-box {
+  position: absolute;
+  width: fit-content;
+  left: -200px;
+}
+.title .letter {
+  display: inline-block;
+  margin: 0;
+  font-size: 3rem;
+}
+
+/* TEXT CSS */
+.box{
+   width: 100%;
+   height: 30rem;
+   border: 1px solid white;
+   display: flex;
+   justify-content: center;
+   align-self: center;
+   text-align: center;
+}
+.brow,
+.eye{
+   margin: auto;
+   border-radius: 50%;
+   width: 10rem;
+   height: 10rem;
+   background: white;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.brow{
+   background: transparent;
+
+}
+.eye{
+   border: solid 1px black;
+
+}
+.eye .ball{
+width: 4rem;
+height: 4rem;
+border-radius: 50%;
+background: black;
+position: absolute;
 
 
-
+}
