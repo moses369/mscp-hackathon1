@@ -137,6 +137,7 @@ addEventListener("mousemove", (e) => {
     targets: ".eye .ball",
     translateX: cursor.x,
     translateY: cursor.y,
+    duration:500
   });
 });
 
