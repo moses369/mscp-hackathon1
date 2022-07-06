@@ -58,11 +58,32 @@ submitText.addEventListener("click", animateSubmit);
 addEventListener("load", (e) => {
   anime({
     targets: ".letter",
-    translateX: 200,
+    translateX: 800,
     delay: anime.stagger(200, { direction: "reverse" }),
     ease: "easeInOutBack",
   });
 });
+const rColor = ()=> Math.floor(Math.random() * 266)
+document.querySelectorAll('.letter').forEach(letter =>{
+
+  letter.addEventListener("click", (e) => {
+    anime({
+      targets: ".letter",
+      translateY:function(el,i,l){return anime.random(50,100)},
+      rotate: function(){return anime.random(-360,360)},
+      color:`rgb(${rColor()},${rColor()},${rColor()})`,
+      direction:'alternate',
+      delay: anime.stagger(200),
+      ease: "easeInOutBack",
+    });
+  });
+  letter.addEventListener("mouseover", (e) => {
+    e.target.style.color = '#34e89e'
+  });
+  letter.addEventListener("mouseout", (e) => {
+    e.target.style.color = '#f0f8ff'
+  });
+})
 
 // EYEBALL ANIMATION
 
@@ -119,17 +140,17 @@ addEventListener("mousemove", (e) => {
   });
 });
 
-brow.addEventListener("mouseover", (e) => {
-  anime({
-    targets: [".eye", "eye. ball"],
-    scaleY: { value: 0.05},
-    duration: 1000
-  });
-});
-brow.addEventListener("mouseout", (e) => {
-  anime({
-    targets: [".eye", "eye. ball"],
-    scaleY: { value: 1, duration: 1000, delay: 1000 },
-  });
-});
+// brow.addEventListener("mouseover", (e) => {
+//   anime({
+//     targets: [".eye", "eye. ball"],
+//     scaleY: { value: 0.05},
+//     duration: 1000
+//   });
+// });
+// brow.addEventListener("mouseout", (e) => {
+//   anime({
+//     targets: [".eye", "eye. ball"],
+//     scaleY: { value: 1, duration: 1000, delay: 1000 },
+//   });
+// });
 

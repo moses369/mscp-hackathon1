@@ -51,7 +51,7 @@ body {
   width: 7rem;
   height: 3rem;
   justify-content: center;
-  background: white;
+  background: transparent;
 }
 
 
@@ -88,13 +88,16 @@ body {
 .title-box {
   position: absolute;
   width: fit-content;
-  left: -200px;
+  left: -800px;
 }
 .title .letter {
   display: inline-block;
   margin: 0;
   font-size: 3rem;
+  cursor: pointer;
 }
+
+
 
 /* TEXT CSS */
 .box{
@@ -122,15 +125,28 @@ body {
 
 }
 .eye{
-   border: solid 1px black;
+   border: solid 3px #b2ec5d;
+   background: radial-gradient( #ffefba, #ffffff);
 
 }
 .eye .ball{
 width: 4rem;
 height: 4rem;
 border-radius: 50%;
-background: black;
+padding: 1rem;
+background: radial-gradient( #34e89e, #0f3443);
 position: absolute;
-
-
+}
+.pupil{
+  width: 2rem;
+  height: 2rem;
+  background: black;
+  border-radius: 50%;
+}
+.mike{
+  position: absolute;
+  top: 0rem;
+  left:-.9rem;
+  width: 80rem;
+  z-index: -1;
 }
