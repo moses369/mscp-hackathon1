@@ -128,7 +128,7 @@ body {
 }
 .eye{
    border: solid 3px #b2ec5d;
-   background: radial-gradient( #ffefba, #ffffff);
+   background: radial-gradient(  #ffffff,#ffefba);
 
 }
 .eye .ball{

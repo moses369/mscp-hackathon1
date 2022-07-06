@@ -71,7 +71,7 @@ document.querySelectorAll('.letter').forEach(letter =>{
       targets: ".letter",
       translateY:function(el,i,l){return anime.random(50,100)},
       rotate: function(){return anime.random(-360,360)},
-      color:`rgb(${rColor()},${rColor()},${rColor()})`,
+      color:function(){return`rgb(${rColor()},${rColor()},${rColor()})`},
       direction:'alternate',
       delay: anime.stagger(200),
       ease: "easeInOutBack",
